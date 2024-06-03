@@ -18,62 +18,24 @@
 /// Created by Alex Kozin
 /// 2020 El Machine
 
-#if canImport(Swift)
-///import Math
+#if canImport(CoreGraphics)
+import CoreGraphics
 
-extension FixedWidthInteger {
+extension CGFloat: BoundedAny {
 
-    public
-    static
-    var any: Self {
-        .random(in: (.min)...(.max))
-    }
-
-    public
-    static
-    func any(in bounds: ClosedRange<Self>) -> Self {
-        .random(in: bounds)
-    }
-
-}
-
-extension Float: BoundedAny {
-
-    public
+    public 
     static
     var min: Self {
         .leastNormalMagnitude
     }
 
-    public
-    static
-    var max: Self {
-        .greatestFiniteMagnitude
-    }
-    
-    public
-    static
-    func any(in bounds: ClosedRange<Self>) -> Self {
-        .random(in: bounds)
-    }
-
-}
-
-extension Double: BoundedAny {
-
-    public
-    static
-    var min: Self {
-        .leastNormalMagnitude
-    }
-
-    public
+    public 
     static
     var max: Self {
         .greatestFiniteMagnitude
     }
 
-    public
+    public 
     static
     func any(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)

@@ -19,15 +19,21 @@
 /// 2020 El Machine
 
 #if canImport(Swift)
-//import Misc
 
+public
 protocol BoundedAny: Any_ where Self: Comparable {
 
-    static var min: Self { get }
-    static var max: Self { get }
+    static
+    var min: Self { get }
 
-    static func any(in bounds: ClosedRange<Self>) -> Self
-    static func any(in array: [Self]) -> Self
+    static
+    var max: Self { get }
+
+    static
+    func any(in bounds: ClosedRange<Self>) -> Self
+
+    static
+    func any(in array: [Self]) -> Self
 
 }
 
