@@ -30,4 +30,13 @@ extension ClosedRange where Bound: FixedWidthInteger {
 
 }
 
+public
+extension Range where Bound: FixedWidthInteger {
+
+    var any: Bound {
+        .random(in: self)
+    }
+
+}
+
 #endif
