@@ -19,7 +19,16 @@
 /// 2020 El Machine
 
 #if canImport(Swift)
-///import Math
+
+extension Bool: Any_ {
+
+    public
+    static
+    var any: Bool {
+        .random()
+    }
+
+}
 
 extension FixedWidthInteger {
 
