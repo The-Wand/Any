@@ -24,6 +24,7 @@ import Foundation
 public
 extension ClosedRange where Bound: FixedWidthInteger {
 
+    @inline(__always)
     var any: Bound {
         .random(in: self)
     }
@@ -33,6 +34,7 @@ extension ClosedRange where Bound: FixedWidthInteger {
 public
 extension Range where Bound: FixedWidthInteger {
 
+    @inline(__always)
     var any: Bound {
         .random(in: self)
     }

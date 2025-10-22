@@ -23,6 +23,7 @@ import Foundation.NSDate
 
 extension Date: Any_ {
 
+    @inline(__always)
     public
     static
     var any: Self {

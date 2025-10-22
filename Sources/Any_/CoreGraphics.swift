@@ -23,19 +23,22 @@ import CoreGraphics
 
 extension CGFloat: BoundedAny {
 
-    public 
+    @inline(__always)
+    public
     static
     var min: Self {
         .leastNormalMagnitude
     }
 
-    public 
+    @inline(__always)
+    public
     static
     var max: Self {
         .greatestFiniteMagnitude
     }
 
-    public 
+    @inline(__always)
+    public
     static
     func any(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)

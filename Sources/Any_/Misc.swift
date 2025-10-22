@@ -39,12 +39,14 @@ protocol BoundedAny: Any_ where Self: Comparable {
 
 extension BoundedAny {
 
+    @inline(__always)
     public
     static
     var any: Self {
         .any(in: (.min)...(.max))
     }
 
+    @inline(__always)
     public
     static
     func any(in array: [Self]) -> Self {

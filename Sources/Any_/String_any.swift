@@ -22,6 +22,7 @@ import Foundation
 
 extension String: Any_ {
 
+    @inline(__always)
     public
     static
     var any: Self {

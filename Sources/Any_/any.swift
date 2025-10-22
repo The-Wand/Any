@@ -22,6 +22,7 @@
 public
 protocol Any_ {
 
+    @inline(__always)
     static
     var any: Self {get}
 

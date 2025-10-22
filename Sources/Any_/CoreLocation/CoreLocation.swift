@@ -24,6 +24,7 @@ import CoreLocation.CLLocation
 /// Random Accuracy
 extension CLLocationAccuracy: Any_ {
 
+    @inlinable
     public
     static
     var any: Self {
@@ -43,6 +44,7 @@ extension CLLocationAccuracy: Any_ {
 /// Random Accuracy Coordinate2D
 extension CLLocationCoordinate2D: Any_ {
 
+    @inline(__always)
     public
     static
     var any: Self {
@@ -54,6 +56,7 @@ extension CLLocationCoordinate2D: Any_ {
 /// Random Accuracy Location
 extension CLLocation: Any_ {
 
+    @inline(__always)
     public
     static
     var any: Self {

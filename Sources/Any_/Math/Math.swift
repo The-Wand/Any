@@ -22,6 +22,7 @@
 
 extension Bool: Any_ {
 
+    @inline(__always)
     public
     static
     var any: Bool {
@@ -32,12 +33,14 @@ extension Bool: Any_ {
 
 extension FixedWidthInteger {
 
+    @inline(__always)
     public
     static
     var any: Self {
         .random(in: (.min)...(.max))
     }
 
+    @inline(__always)
     public
     static
     func any(in bounds: ClosedRange<Self>) -> Self {
@@ -48,18 +51,21 @@ extension FixedWidthInteger {
 
 extension Float: BoundedAny {
 
+    @inline(__always)
     public
     static
     var min: Self {
         .leastNormalMagnitude
     }
 
+    @inline(__always)
     public
     static
     var max: Self {
         .greatestFiniteMagnitude
     }
-    
+
+    @inline(__always)
     public
     static
     func any(in bounds: ClosedRange<Self>) -> Self {
@@ -70,18 +76,21 @@ extension Float: BoundedAny {
 
 extension Double: BoundedAny {
 
+    @inline(__always)
     public
     static
     var min: Self {
         .leastNormalMagnitude
     }
 
+    @inline(__always)
     public
     static
     var max: Self {
         .greatestFiniteMagnitude
     }
 
+    @inline(__always)
     public
     static
     func any(in bounds: ClosedRange<Self>) -> Self {
