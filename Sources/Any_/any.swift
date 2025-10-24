@@ -19,6 +19,7 @@
 /// 2020 El Machine
 
 /// Random object for Any purpose
+/// 1.0.2
 public
 protocol Any_ {
 
