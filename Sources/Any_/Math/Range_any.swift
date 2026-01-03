@@ -41,4 +41,15 @@ extension Range where Bound: FixedWidthInteger {
 
 }
 
+public
+extension ClosedRange where Bound == Int {
+
+    @inline(__always)
+    static
+    var any: Self {
+        1...(1...11).any
+    }
+
+}
+
 #endif
