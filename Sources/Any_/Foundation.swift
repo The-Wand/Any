@@ -1,13 +1,11 @@
 ///
-/// Copyright © 2020-2024 El Machine 🤖
-/// https://el-machine.com/
+/// Copyright 2020 Aleksander Kozin
 ///
 /// Licensed under the Apache License, Version 2.0 (the "License");
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) LICENSE file
-/// 2) https://apache.org/licenses/LICENSE-2.0
+///     http://www.apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
 /// distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,8 +13,8 @@
 /// See the License for the specific language governing permissions and
 /// limitations under the License.
 ///
-/// Created by Alex Kozin
-/// 2020 El Machine
+/// Created by Aleksander Kozin
+/// .any
 
 #if canImport(Foundation)
 import Foundation.NSDate
@@ -28,6 +26,19 @@ extension Date: Any_ {
     static
     var any: Self {
         Date(timeIntervalSince1970: .any(in: 0...(Date.distantFuture.timeIntervalSince1970)))
+    }
+
+}
+
+import Foundation.NSURL
+
+extension URL: Any_ {
+
+    @inline(__always)
+    public
+    static
+    var any: Self {
+        Bundle.main.bundleURL
     }
 
 }
