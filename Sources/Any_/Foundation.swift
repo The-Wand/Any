@@ -32,4 +32,17 @@ extension Date: Any_ {
 
 }
 
+import Foundation.NSURL
+
+extension URL: Any_ {
+
+    @inline(__always)
+    public
+    static
+    var any: Self {
+        Bundle.main.bundleURL
+    }
+
+}
+
 #endif
