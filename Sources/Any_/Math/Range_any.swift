@@ -52,4 +52,15 @@ extension ClosedRange where Bound == Int {
 
 }
 
+public
+extension Range where Bound == Int {
+
+    @inline(__always)
+    static
+    var any: Self {
+        Range(uncheckedBounds: (1, (1...11).any))
+    }
+
+}
+
 #endif
