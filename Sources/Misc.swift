@@ -14,12 +14,12 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 #if canImport(Swift)
 
 public
-protocol BoundedAny: `|า•|` where Self: Comparable {
+protocol BoundedAny: Some where Self: Comparable {
 
     static
     var min: Self { get }
@@ -28,10 +28,10 @@ protocol BoundedAny: `|า•|` where Self: Comparable {
     var max: Self { get }
 
     static
-    func any(in bounds: ClosedRange<Self>) -> Self
+    func some(in bounds: ClosedRange<Self>) -> Self
 
     static
-    func any(in array: [Self]) -> Self
+    func some(in array: [Self]) -> Self
 
 }
 
@@ -40,14 +40,14 @@ extension BoundedAny {
     @inline(__always)
     public
     static
-    var any: Self {
-        .any(in: (.min)...(.max))
+    var some: Self {
+        .some(in: (.min)...(.max))
     }
 
     @inline(__always)
     public
     static
-    func any(in array: [Self]) -> Self {
+    func some(in array: [Self]) -> Self {
         array.randomElement()!
     }
 

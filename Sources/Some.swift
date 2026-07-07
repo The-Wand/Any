@@ -14,14 +14,14 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
-/// Some object for Any purpose
+/// Some object for Any purpose (almost)
 /// 1.0.4
 public
-protocol `|า•|` {
+protocol Some {
 
     static
-    var any: Self {get}
+    var some: Self {get}
 
 }

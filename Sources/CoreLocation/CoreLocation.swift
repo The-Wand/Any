@@ -14,18 +14,18 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 #if canImport(CoreLocation)
 import CoreLocation.CLLocation
 
 /// Random Accuracy
-extension CLLocationAccuracy: `|า•|` {
+extension CLLocationAccuracy: Some {
 
     @inlinable
     public
     static
-    var any: Self {
+    var some: Self {
         [
             kCLLocationAccuracyBestForNavigation,
             kCLLocationAccuracyBest,
@@ -40,29 +40,29 @@ extension CLLocationAccuracy: `|า•|` {
 }
 
 /// Random Accuracy Coordinate2D
-extension CLLocationCoordinate2D: `|า•|` {
+extension CLLocationCoordinate2D: Some {
 
     @inline(__always)
     public
     static
-    var any: Self {
-        Self(latitude: .any(in: -90...90), longitude: .any(in: -180...180))
+    var some: Self {
+        Self(latitude: .some(in: -90...90), longitude: .some(in: -180...180))
     }
 
 }
 
 /// Random Accuracy Location
-extension CLLocation: `|า•|` {
+extension CLLocation: Some {
 
     @inline(__always)
     public
     static
-    var any: Self {
-        Self.init(coordinate: .any,
-                  altitude: .any,
-                  horizontalAccuracy: .any,
-                  verticalAccuracy: .any,
-                  timestamp: .any)
+    var some: Self {
+        Self.init(coordinate: .some,
+                  altitude: .some,
+                  horizontalAccuracy: .some,
+                  verticalAccuracy: .some,
+                  timestamp: .some)
     }
 
 }

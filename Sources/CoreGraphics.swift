@@ -14,7 +14,7 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 #if canImport(CoreGraphics)
 import CoreGraphics
@@ -38,7 +38,7 @@ extension CGFloat: BoundedAny {
     @inline(__always)
     public
     static
-    func any(in bounds: ClosedRange<Self>) -> Self {
+    func some(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)
     }
 

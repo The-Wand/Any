@@ -3,7 +3,7 @@
 ### Usage
 ```bash
 
-let string: String = .any
+let string: String = .some
 
 ```
 ### Idea

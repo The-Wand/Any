@@ -20,24 +20,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "|า•|",
+    name: "Some",
 
     platforms: [
         .iOS(.v14),
         .macOS(.v12),
         .tvOS(.v14),
+//        .visionOS(.v1),
         .watchOS(.v7),
     ],
 
     products: [
-        .library(name: "`|า•|`", targets: ["`|า•|`"])
+        .library(name: "Some", targets: ["Some"])
     ],
 
     targets: [
-        .target(name: "`|า•|`",
+        .target(name: "Some",
                 path: "Sources"),
-        .testTarget(name: "`|า•|`Tests",
-                    dependencies: ["`|า•|`"],
+        .testTarget(name: "SomeTests",
+                    dependencies: ["Some"],
                     path: "Tests")
     ]
 )

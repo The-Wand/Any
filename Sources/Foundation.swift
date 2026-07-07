@@ -14,30 +14,30 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 #if canImport(Foundation)
 import Foundation.NSDate
 
-extension Date: `|า•|` {
+extension Date: Some {
 
     @inline(__always)
     public
     static
-    var any: Self {
-        Date(timeIntervalSince1970: .any(in: 0...(Date.distantFuture.timeIntervalSince1970)))
+    var some: Self {
+        Date(timeIntervalSince1970: .some(in: 0...(Date.distantFuture.timeIntervalSince1970)))
     }
 
 }
 
 import Foundation.NSURL
 
-extension URL: `|า•|` {
+extension URL: Some {
 
     @inline(__always)
     public
     static
-    var any: Self {
+    var some: Self {
         Bundle.main.bundleURL
     }
 

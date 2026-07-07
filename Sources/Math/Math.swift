@@ -14,16 +14,16 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 #if canImport(Swift)
 
-extension Bool: `|า•|` {
+extension Bool: Some {
 
     @inline(__always)
     public
     static
-    var any: Bool {
+    var some: Bool {
         .random()
     }
 
@@ -34,14 +34,14 @@ extension FixedWidthInteger {
     @inline(__always)
     public
     static
-    var any: Self {
+    var some: Self {
         .random(in: (.min)...(.max))
     }
 
     @inline(__always)
     public
     static
-    func any(in bounds: ClosedRange<Self>) -> Self {
+    func some(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)
     }
 
@@ -66,7 +66,7 @@ extension Float: BoundedAny {
     @inline(__always)
     public
     static
-    func any(in bounds: ClosedRange<Self>) -> Self {
+    func some(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)
     }
 
@@ -91,7 +91,7 @@ extension Double: BoundedAny {
     @inline(__always)
     public
     static
-    func any(in bounds: ClosedRange<Self>) -> Self {
+    func some(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)
     }
 

@@ -14,7 +14,7 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 import SwiftUI
 

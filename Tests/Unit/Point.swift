@@ -14,12 +14,12 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
+/// .some
 
 import Foundation
-import `|า•|`
+import Some
 
-struct Point: Equatable, `|า•|` {
+struct Point: Equatable, Some {
 
     let id: Int
 
@@ -27,7 +27,7 @@ struct Point: Equatable, `|า•|` {
     var t: TimeInterval
 
 
-    static var any: Point {
-        .init(id: .any(in: 0...4), x: .any, y: .any, z: .any, t: .any)
+    static var some: Point {
+        .init(id: .some(in: 0...4), x: .some, y: .some, z: .some, t: .some)
     }
 }
