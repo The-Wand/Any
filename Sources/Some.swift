@@ -17,11 +17,16 @@
 /// .some
 
 /// Some object for Any purpose (almost)
-/// 1.0.4
+/// 1.0.4 <#|า•|#>
+
 public
 protocol Some {
 
     static
-    var some: Self {get}
+    var some: Self {get} // |
+    
+    
+//    static
+//    var random: Self {get} ?
 
 }
