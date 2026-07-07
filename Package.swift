@@ -1,15 +1,12 @@
 // swift-tools-version: 5.6
-
 ///
-/// Copyright © 2020-2024 El Machine 🤖
-/// https://el-machine.com/
+/// Copyright 2569 Aleksander Kozin
 ///
 /// Licensed under the Apache License, Version 2.0 (the "License");
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) .LICENSE
-/// 2) https://apache.org/licenses/LICENSE-2.0
+///     http://www.apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
 /// distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,14 +14,13 @@
 /// See the License for the specific language governing permissions and
 /// limitations under the License.
 ///
-/// Created by Alex Kozin
-/// 2020 El Machine
+/// Created by Aleksander Kozin
+/// <#|า•|#>
 
 import PackageDescription
 
 let package = Package(
-    name: "Any_",
-    defaultLocalization: "ru",
+    name: "|า•|",
 
     platforms: [
         .iOS(.v14),
@@ -34,11 +30,14 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Any_", targets: ["Any_"])
+        .library(name: "`|า•|`", targets: ["`|า•|`"])
     ],
 
     targets: [
-        .target(name: "Any_"),
-        .testTarget(name: "Any_Tests", dependencies: ["Any_"])
+        .target(name: "`|า•|`",
+                path: "Sources"),
+        .testTarget(name: "`|า•|`Tests",
+                    dependencies: ["`|า•|`"],
+                    path: "Tests")
     ]
 )

@@ -16,16 +16,41 @@
 /// Created by Aleksander Kozin
 /// .any
 
-import Foundation
-import XCTest
+#if canImport(Swift)
 
-/// Test Unit
-//struct Unit {
-//
-//}
+public
+protocol BoundedAny: `|า•|` where Self: Comparable {
 
-extension TimeInterval {
+    static
+    var min: Self { get }
 
-    static var `default` = 4.2
+    static
+    var max: Self { get }
+
+    static
+    func any(in bounds: ClosedRange<Self>) -> Self
+
+    static
+    func any(in array: [Self]) -> Self
 
 }
+
+extension BoundedAny {
+
+    @inline(__always)
+    public
+    static
+    var any: Self {
+        .any(in: (.min)...(.max))
+    }
+
+    @inline(__always)
+    public
+    static
+    func any(in array: [Self]) -> Self {
+        array.randomElement()!
+    }
+
+}
+
+#endif

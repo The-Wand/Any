@@ -16,12 +16,31 @@
 /// Created by Aleksander Kozin
 /// .any
 
-/// Random object for Any purpose
-/// 1.0.3
-public
-protocol Any_ {
+#if canImport(Foundation)
+import Foundation.NSDate
 
+extension Date: `|า•|` {
+
+    @inline(__always)
+    public
     static
-    var any: Self {get}
+    var any: Self {
+        Date(timeIntervalSince1970: .any(in: 0...(Date.distantFuture.timeIntervalSince1970)))
+    }
 
 }
+
+import Foundation.NSURL
+
+extension URL: `|า•|` {
+
+    @inline(__always)
+    public
+    static
+    var any: Self {
+        Bundle.main.bundleURL
+    }
+
+}
+
+#endif

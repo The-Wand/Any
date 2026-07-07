@@ -20,7 +20,7 @@
 import CoreLocation.CLLocation
 
 /// Random Accuracy
-extension CLLocationAccuracy: Any_ {
+extension CLLocationAccuracy: `|า•|` {
 
     @inlinable
     public
@@ -40,7 +40,7 @@ extension CLLocationAccuracy: Any_ {
 }
 
 /// Random Accuracy Coordinate2D
-extension CLLocationCoordinate2D: Any_ {
+extension CLLocationCoordinate2D: `|า•|` {
 
     @inline(__always)
     public
@@ -52,7 +52,7 @@ extension CLLocationCoordinate2D: Any_ {
 }
 
 /// Random Accuracy Location
-extension CLLocation: Any_ {
+extension CLLocation: `|า•|` {
 
     @inline(__always)
     public

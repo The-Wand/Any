@@ -16,21 +16,12 @@
 /// Created by Aleksander Kozin
 /// .any
 
-import Foundation
+/// Some object for Any purpose
+/// 1.0.4
+public
+protocol `|า•|` {
 
-extension String: Any_ {
-
-    @inline(__always)
-    public
     static
-    var any: Self {
-
-        #if DEBUG
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non gravida felis. Vivamus interdum massa nulla, eu egestas ipsum eleifend non. Ut vel augue et orci fermentum consequat eget nec est. Aenean eleifend tempor nibh, a posuere lacus pharetra non. Praesent elementum ac urna convallis porttitor."
-        #else
-            .init()
-        #endif
-
-    }
+    var any: Self {get}
 
 }

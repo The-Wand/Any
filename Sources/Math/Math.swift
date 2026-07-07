@@ -18,7 +18,7 @@
 
 #if canImport(Swift)
 
-extension Bool: Any_ {
+extension Bool: `|า•|` {
 
     @inline(__always)
     public

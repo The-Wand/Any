@@ -17,17 +17,16 @@
 /// .any
 
 import Foundation
-import Any_
+import XCTest
 
-struct Point: Equatable, Any_ {
+/// Test Unit
+//struct Unit {
+//
+//}
 
-    let id: Int
+extension TimeInterval {
 
-    let x, y, z: Float
-    var t: TimeInterval
+    static
+    var `default` = 4.2
 
-
-    static var any: Point {
-        .init(id: .any(in: 0...4), x: .any, y: .any, z: .any, t: .any)
-    }
 }

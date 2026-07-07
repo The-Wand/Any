@@ -16,31 +16,21 @@
 /// Created by Aleksander Kozin
 /// .any
 
-#if canImport(Foundation)
-import Foundation.NSDate
+import Foundation
 
-extension Date: Any_ {
-
-    @inline(__always)
-    public
-    static
-    var any: Self {
-        Date(timeIntervalSince1970: .any(in: 0...(Date.distantFuture.timeIntervalSince1970)))
-    }
-
-}
-
-import Foundation.NSURL
-
-extension URL: Any_ {
+extension String: `|า•|` {
 
     @inline(__always)
     public
     static
     var any: Self {
-        Bundle.main.bundleURL
+
+        #if DEBUG
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non gravida felis. Vivamus interdum massa nulla, eu egestas ipsum eleifend non. Ut vel augue et orci fermentum consequat eget nec est. Aenean eleifend tempor nibh, a posuere lacus pharetra non. Praesent elementum ac urna convallis porttitor."
+        #else
+            .init()
+        #endif
+
     }
 
 }
-
-#endif
