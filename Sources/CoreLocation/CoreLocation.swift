@@ -14,18 +14,25 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
 #if canImport(CoreLocation)
 import CoreLocation.CLLocation
 
 /// Random Accuracy
-extension CLLocationAccuracy: Some {
+extension CLLocationAccuracy: Any_ {
 
     @inlinable
     public
     static
-    var some: Self {
+    var any: Self {
+            kCLLocationAccuracyBest
+    }
+    
+    @inlinable
+    public
+    static
+    var rand: Self {
         [
             kCLLocationAccuracyBestForNavigation,
             kCLLocationAccuracyBest,
@@ -33,36 +40,53 @@ extension CLLocationAccuracy: Some {
             kCLLocationAccuracyHundredMeters,
             kCLLocationAccuracyKilometer,
             kCLLocationAccuracyThreeKilometers,
-        ].randomElement()!
-
+        ].randomElement()! 
     }
 
 }
 
 /// Random Accuracy Coordinate2D
-extension CLLocationCoordinate2D: Some {
+extension CLLocationCoordinate2D: Any_ {
 
     @inline(__always)
     public
     static
-    var some: Self {
-        Self(latitude: .some(in: -90...90), longitude: .some(in: -180...180))
+    var any: Self {
+        Self(latitude: .any(in: -90...90), longitude: .any(in: -180...180))
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
+        Self(latitude: .any(in: -90...90), longitude: .any(in: -180...180))
     }
 
 }
 
 /// Random Accuracy Location
-extension CLLocation: Some {
+extension CLLocation: Any_ {
 
     @inline(__always)
     public
     static
-    var some: Self {
-        Self.init(coordinate: .some,
-                  altitude: .some,
-                  horizontalAccuracy: .some,
-                  verticalAccuracy: .some,
-                  timestamp: .some)
+    var any: Self {
+        Self.init(coordinate: .any,
+                  altitude: .any,
+                  horizontalAccuracy: .any,
+                  verticalAccuracy: .any,
+                  timestamp: .any)
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
+        Self.init(coordinate: .any,
+                  altitude: .any,
+                  horizontalAccuracy: .any,
+                  verticalAccuracy: .any,
+                  timestamp: .any)
     }
 
 }

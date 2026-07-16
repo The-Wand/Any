@@ -14,12 +14,12 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
 #if canImport(CoreGraphics)
 import CoreGraphics
 
-extension CGFloat: BoundedAny {
+extension CGFloat: Any_Bounded {
 
     @inline(__always)
     public
@@ -34,12 +34,19 @@ extension CGFloat: BoundedAny {
     var max: Self {
         .greatestFiniteMagnitude
     }
+    
+    @inline(__always)
+    public
+    static
+    func any(in bounds: ClosedRange<Self>) -> Self {
+        .random(in: bounds)
+    }
 
     @inline(__always)
     public
     static
-    func some(in bounds: ClosedRange<Self>) -> Self {
-        .random(in: bounds)
+    var rand: Self {
+        .random(in: (.min)...(.max))
     }
 
 }

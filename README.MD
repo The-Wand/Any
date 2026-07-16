@@ -3,7 +3,7 @@
 ### Usage
 ```bash
 
-let string: String = .some
+let string: String = .any
 
 ```
 ### Idea
@@ -15,6 +15,6 @@ let string: String = .some
 Tasks
 
 - [x] Any
-- [ ] _
+- [ ] Random_
 
 [Alex Kozin](mailto:al.kozin@gmail.com)  

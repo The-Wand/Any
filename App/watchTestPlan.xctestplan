@@ -23,7 +23,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Some.xcodeproj",
+        "containerPath" : "container:Any_.xcodeproj",
         "identifier" : "613966472BE0F87A004C18A3",
         "name" : "watchPlayTests"
       }

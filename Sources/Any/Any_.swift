@@ -14,43 +14,27 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
-#if canImport(Swift)
+/// Object for Any purpose
+/// 1.0.4
+public
+protocol Any_ {
+
+    static
+    var any: Self {get}
+    
+    static
+    var rand: Self {get}
+
+}
 
 public
-protocol BoundedAny: Some where Self: Comparable {
-
+extension Any_ {
+    
     static
-    var min: Self { get }
-
-    static
-    var max: Self { get }
-
-    static
-    func some(in bounds: ClosedRange<Self>) -> Self
-
-    static
-    func some(in array: [Self]) -> Self
-
-}
-
-extension BoundedAny {
-
-    @inline(__always)
-    public
-    static
-    var some: Self {
-        .some(in: (.min)...(.max))
+    var any: Self {
+        rand
     }
-
-    @inline(__always)
-    public
-    static
-    func some(in array: [Self]) -> Self {
-        array.randomElement()!
-    }
-
+    
 }
-
-#endif

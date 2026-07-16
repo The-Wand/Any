@@ -14,7 +14,7 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
 import Foundation
 import XCTest

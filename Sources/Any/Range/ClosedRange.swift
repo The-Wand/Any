@@ -14,7 +14,7 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
 #if canImport(Foundation)
 import Foundation
@@ -23,40 +23,26 @@ public
 extension ClosedRange where Bound: FixedWidthInteger {
 
     @inline(__always)
-    var some: Bound {
+    var any: Bound {
         .random(in: self)
     }
 
 }
 
-public
-extension Range where Bound: FixedWidthInteger {
-
-    @inline(__always)
-    var some: Bound {
-        .random(in: self)
-    }
-
-}
-
-public
 extension ClosedRange where Bound == Int {
 
     @inline(__always)
+    public
     static
-    var some: Self {
-        1...(1...11).some
+    var any: Self {
+        1...(1...11).any
     }
-
-}
-
-public
-extension Range where Bound == Int {
-
+    
     @inline(__always)
+    public
     static
-    var some: Self {
-        Range(uncheckedBounds: (1, (1...11).some))
+    var full: Self {
+        (Bound.min...Bound.max)
     }
 
 }

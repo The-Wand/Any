@@ -14,16 +14,23 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
 #if canImport(Swift)
 
-extension Bool: Some {
+extension Bool: Any_ {
 
     @inline(__always)
     public
     static
-    var some: Bool {
+    var any: Bool {
+        true
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Bool {
         .random()
     }
 
@@ -34,20 +41,59 @@ extension FixedWidthInteger {
     @inline(__always)
     public
     static
-    var some: Self {
+    var any: Self {
+        1
+    }
+
+    @inline(__always)
+    public
+    static
+    func any(in bounds: ClosedRange<Self>) -> Self {
+        .random(in: bounds)
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
         .random(in: (.min)...(.max))
     }
 
+}
+
+extension Float: Any_Bounded {
+
     @inline(__always)
     public
     static
-    func some(in bounds: ClosedRange<Self>) -> Self {
+    var min: Self {
+        .leastNormalMagnitude
+    }
+
+    @inline(__always)
+    public
+    static
+    var max: Self {
+        .greatestFiniteMagnitude
+    }
+    
+    @inline(__always)
+    public
+    static
+    func any(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
+        .random(in: (.min)...(.max))
     }
 
 }
 
-extension Float: BoundedAny {
+extension Double: Any_Bounded {
 
     @inline(__always)
     public
@@ -66,32 +112,7 @@ extension Float: BoundedAny {
     @inline(__always)
     public
     static
-    func some(in bounds: ClosedRange<Self>) -> Self {
-        .random(in: bounds)
-    }
-
-}
-
-extension Double: BoundedAny {
-
-    @inline(__always)
-    public
-    static
-    var min: Self {
-        .leastNormalMagnitude
-    }
-
-    @inline(__always)
-    public
-    static
-    var max: Self {
-        .greatestFiniteMagnitude
-    }
-
-    @inline(__always)
-    public
-    static
-    func some(in bounds: ClosedRange<Self>) -> Self {
+    func any(in bounds: ClosedRange<Self>) -> Self {
         .random(in: bounds)
     }
 

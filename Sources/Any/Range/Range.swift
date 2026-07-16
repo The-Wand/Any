@@ -14,19 +14,57 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .some
+/// .any
 
-/// Some object for Any purpose (almost)
-/// 1.0.4 <#|า•|#>
+#if canImport(Foundation)
+import Foundation
+
+extension Any_ {
+    
+    typealias Range = Any_Range
+    
+}
 
 public
-protocol Some {
+protocol Any_Range {
 
     static
-    var some: Self {get} // |
+    var any: Self {get}
     
+    static
+    var full: Self {get}
     
-//    static
-//    var random: Self {get} ?
+}
+
+public
+extension Any_Range {
+    
+    static
+    var any: Self {
+        full
+    }
+    
+}
+
+public
+extension Range where Bound: FixedWidthInteger {
+
+    @inline(__always)
+    var any: Bound {
+        .random(in: self)
+    }
 
 }
+
+public
+extension Range where Bound == Int {
+
+    @inline(__always)
+    static
+    var any: Self {
+        Range(uncheckedBounds: (1, (1...11).any))
+    }
+
+}
+
+#endif

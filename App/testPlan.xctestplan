@@ -22,9 +22,9 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Some.xcodeproj",
+        "containerPath" : "container:Any_.xcodeproj",
         "identifier" : "618D53D02BE3C5120098DB6F",
-        "name" : "SomeTests"
+        "name" : "Any_Tests"
       }
     }
   ],
