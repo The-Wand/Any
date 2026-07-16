@@ -15,6 +15,6 @@ let string: String = .any
 Tasks
 
 - [x] Any
-- [ ] _
+- [ ] Random_
 
 [Alex Kozin](mailto:al.kozin@gmail.com)  

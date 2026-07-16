@@ -24,12 +24,12 @@ import PackageDescription
 
 let package = Package(
     name: "Any_",
-    defaultLocalization: "ru",
 
     platforms: [
         .iOS(.v14),
         .macOS(.v12),
         .tvOS(.v14),
+//        .visionOS(.v1),
         .watchOS(.v7),
     ],
 
@@ -38,7 +38,10 @@ let package = Package(
     ],
 
     targets: [
-        .target(name: "Any_"),
-        .testTarget(name: "Any_Tests", dependencies: ["Any_"])
+        .target(name: "Any_",
+                path: "Sources"),
+        .testTarget(name: "Any_Tests",
+                    dependencies: ["Any_"],
+                    path: "Tests")
     ]
 )
