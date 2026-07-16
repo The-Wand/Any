@@ -16,31 +16,47 @@
 /// Created by Aleksander Kozin
 /// .any
 
-import Foundation
-import Any_
+#if canImport(Swift)
 
-struct Point: Equatable, Any_ {
-
-    let id: Int
-
-    let x, y, z: Float
-    var t: TimeInterval
-
-    @inline(__always)
-    public
-    static
-    var any: Point {
-        .init(id: 1, x: 0, y: 0, z: 0, t: 0)
-    }
+extension Any_ {
     
+    typealias Bounded = Any_Bounded
+    
+}
+
+public
+protocol Any_Bounded: Any_ where Self: Comparable {
+
+    static
+    var min: Self { get }
+
+    static
+    var max: Self { get }
+
+    static
+    func any(in bounds: ClosedRange<Self>) -> Self
+
+    static
+    func any(in array: [Self]) -> Self
+
+}
+
+extension Any_Bounded {
+
     @inline(__always)
     public
     static
-    var rand: Self {
-        .init(id: .any(in: 0...4),
-              x: .any,
-              y: .any,
-              z: .any,
-              t: .any)
+    var any: Self {
+        .any(in: (.min)...(.max))
     }
+
+    @inline(__always)
+    public
+    static
+    func any(in array: [Self]) -> Self {
+        array.randomElement()!
+    }
+
 }
+
+#endif

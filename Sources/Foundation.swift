@@ -20,11 +20,18 @@
 import Foundation.NSDate
 
 extension Date: Any_ {
-
+    
     @inline(__always)
     public
     static
     var any: Self {
+        Date(timeIntervalSince1970: .any(in: 0...(Date.distantFuture.timeIntervalSince1970)))
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
         Date(timeIntervalSince1970: .any(in: 0...(Date.distantFuture.timeIntervalSince1970)))
     }
 
@@ -39,6 +46,13 @@ extension URL: Any_ {
     static
     var any: Self {
         Bundle.main.bundleURL
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
+        URL(string: Bundle.main.bundlePath + "/" + .rand)!
     }
 
 }

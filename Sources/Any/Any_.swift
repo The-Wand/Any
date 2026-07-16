@@ -16,12 +16,25 @@
 /// Created by Aleksander Kozin
 /// .any
 
-/// Random object for Any purpose
-/// 1.0.3
+/// Object for Any purpose
+/// 1.0.4
 public
 protocol Any_ {
 
     static
     var any: Self {get}
+    
+    static
+    var rand: Self {get}
 
+}
+
+public
+extension Any_ {
+    
+    static
+    var any: Self {
+        rand
+    }
+    
 }

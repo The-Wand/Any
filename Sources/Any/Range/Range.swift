@@ -16,39 +16,53 @@
 /// Created by Aleksander Kozin
 /// .any
 
-#if canImport(Swift)
+#if canImport(Foundation)
+import Foundation
+
+extension Any_ {
+    
+    typealias Range = Any_Range
+    
+}
 
 public
-protocol BoundedAny: Any_ where Self: Comparable {
+protocol Any_Range {
 
     static
-    var min: Self { get }
-
+    var any: Self {get}
+    
     static
-    var max: Self { get }
+    var full: Self {get}
+    
+}
 
+public
+extension Any_Range {
+    
     static
-    func any(in bounds: ClosedRange<Self>) -> Self
+    var any: Self {
+        full
+    }
+    
+}
 
-    static
-    func any(in array: [Self]) -> Self
+public
+extension Range where Bound: FixedWidthInteger {
+
+    @inline(__always)
+    var any: Bound {
+        .random(in: self)
+    }
 
 }
 
-extension BoundedAny {
+public
+extension Range where Bound == Int {
 
     @inline(__always)
-    public
     static
     var any: Self {
-        .any(in: (.min)...(.max))
-    }
-
-    @inline(__always)
-    public
-    static
-    func any(in array: [Self]) -> Self {
-        array.randomElement()!
+        Range(uncheckedBounds: (1, (1...11).any))
     }
 
 }

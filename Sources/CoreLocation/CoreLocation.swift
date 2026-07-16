@@ -26,6 +26,13 @@ extension CLLocationAccuracy: Any_ {
     public
     static
     var any: Self {
+            kCLLocationAccuracyBest
+    }
+    
+    @inlinable
+    public
+    static
+    var rand: Self {
         [
             kCLLocationAccuracyBestForNavigation,
             kCLLocationAccuracyBest,
@@ -33,8 +40,7 @@ extension CLLocationAccuracy: Any_ {
             kCLLocationAccuracyHundredMeters,
             kCLLocationAccuracyKilometer,
             kCLLocationAccuracyThreeKilometers,
-        ].randomElement()!
-
+        ].randomElement()! 
     }
 
 }
@@ -48,6 +54,13 @@ extension CLLocationCoordinate2D: Any_ {
     var any: Self {
         Self(latitude: .any(in: -90...90), longitude: .any(in: -180...180))
     }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
+        Self(latitude: .any(in: -90...90), longitude: .any(in: -180...180))
+    }
 
 }
 
@@ -58,6 +71,17 @@ extension CLLocation: Any_ {
     public
     static
     var any: Self {
+        Self.init(coordinate: .any,
+                  altitude: .any,
+                  horizontalAccuracy: .any,
+                  verticalAccuracy: .any,
+                  timestamp: .any)
+    }
+    
+    @inline(__always)
+    public
+    static
+    var rand: Self {
         Self.init(coordinate: .any,
                   altitude: .any,
                   horizontalAccuracy: .any,

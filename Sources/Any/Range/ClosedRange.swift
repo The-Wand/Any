@@ -29,34 +29,20 @@ extension ClosedRange where Bound: FixedWidthInteger {
 
 }
 
-public
-extension Range where Bound: FixedWidthInteger {
-
-    @inline(__always)
-    var any: Bound {
-        .random(in: self)
-    }
-
-}
-
-public
 extension ClosedRange where Bound == Int {
 
     @inline(__always)
+    public
     static
     var any: Self {
         1...(1...11).any
     }
-
-}
-
-public
-extension Range where Bound == Int {
-
+    
     @inline(__always)
+    public
     static
-    var any: Self {
-        Range(uncheckedBounds: (1, (1...11).any))
+    var full: Self {
+        (Bound.min...Bound.max)
     }
 
 }
