@@ -14,10 +14,11 @@
 /// limitations under the License.
 ///
 /// Created by Aleksander Kozin
-/// .any
 
+/// .any
 /// Object for Any purpose
-/// 1.0.4
+/// <#|า•|#>$
+/// <#1#>.<#0#>.<#4#>
 public
 protocol Any_ {
 
